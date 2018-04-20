@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path,include,re_path
 from django.views.static import serve
 from workshop.settings import MEDIA_ROOT
+from goods.view_base import GoodsListView
 import xadmin
+xadmin.autodiscover()
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('xadmin/', xadmin.site.urls),
@@ -26,4 +28,6 @@ urlpatterns = [
     re_path('media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
     # 富文本相关url
     path('ueditor/', include('DjangoUeditor.urls')),
+    # 商品列表
+    path('goods/',GoodsListView.as_view(),name='good-list'),
 ]

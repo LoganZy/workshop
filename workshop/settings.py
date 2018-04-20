@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'goods.apps.GoodsConfig',
     'trade.apps.TradeConfig',
     'user_operation.apps.UserOperationConfig',
-    'extra_apps.xadmin.apps.XAdminConfig',
+    # 'extra_apps.xadmin.apps.XAdminConfig',
+    'xadmin',
     'DjangoUeditor'
 ]
 
